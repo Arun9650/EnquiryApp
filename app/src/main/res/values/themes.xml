@@ -1,0 +1,77 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EnquiryApp" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.EnquiryApp" parent="Base.Theme.EnquiryApp" />
+
+    <style name="ButtonStyle" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">15dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:paddingVertical">13.5dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="backgroundTint">#2D9BF0</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+
+    <style name="EditText_LinearLayout" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">20dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+
+    <style name="EditText_RelativeLayout" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginVertical">13dp</item>
+    </style>
+
+
+    <style name="EditText_ImageView" parent="">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
+
+
+    <style name="EditTextStyle" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">15dp</item>
+        <item name="android:paddingVertical">7dp</item>
+        <item name="android:maxLines">5</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarSize">5dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">#8F858A</item>
+    </style>
+
+    <style name="EditText_RequiredTextView" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">#E5E2E4</item>
+        <item name="android:text">@string/required</item>
+    </style>
+
+
+    <style name="EditText_Divider" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">#F0F0F0</item>
+    </style>
+
+
+</resources>

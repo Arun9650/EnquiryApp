@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/EditText_LinearLayout">
+
+    <RelativeLayout style="@style/EditText_RelativeLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon_iv"
+            style="@style/EditText_ImageView"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/ic_user"
+            app:tint="#6c6c6c" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til"
+            style="?attr/textInputFilledStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/icon_iv"
+            android:hint="@string/login"
+            android:textColorHint="#8F858A"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:hintTextColor="#8F858A"
+            app:prefixTextColor="#E5E2E4"
+            app:suffixText="@string/required">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="#8F858A" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

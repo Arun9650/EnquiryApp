@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".presentation.enquiry.activity.AddEditEnquiryActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider"
+        android:layout_alignParentBottom="true">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/last_edit_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                tools:text="Last edited : oct 3 2023" />
+
+            <include
+                android:id="@+id/name_et"
+                layout="@layout/edit_text_item" />
+
+
+            <include
+                android:id="@+id/mobile_number_et"
+                layout="@layout/edit_text_item" />
+
+
+            <include
+                android:id="@+id/email_et"
+                layout="@layout/edit_text_item" />
+
+            <include
+                android:id="@+id/address_et"
+                layout="@layout/edit_text_item" />
+
+            <include
+                android:id="@+id/latitude_et"
+                layout="@layout/edit_text_item" />
+
+
+            <include
+                android:id="@+id/longitude_et"
+                layout="@layout/edit_text_item" />
+
+
+            <include
+                android:id="@+id/emp_id_et"
+                layout="@layout/edit_text_item" />
+
+            <include
+                android:id="@+id/emp_name_et"
+                layout="@layout/edit_text_item" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_edit_report_btn"
+                style="@style/ButtonStyle"
+                android:text="@string/create_report" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
