@@ -13,23 +13,26 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up JDK 1.8
+    - name: Set up JDK 11
       uses: actions/setup-java@v1
       with:
-        java-version: 1.8
+        java-version: 11
 
     # Add a step to give execution permission to gradlew
     - name: Grant execute permission for Gradlew
       run: chmod +x ./gradlew
 
-    - name: Download dependencies
-      run: ./gradlew dependencies
+    # Clear Gradle Cache (Optional but recommended for fresh builds)
+    - name: Clear Gradle Cache
+      run: rm -rf ~/.gradle/caches/
 
+    # Build the APK
     - name: Build APK
       run: ./gradlew assembleDebug
 
+    # Upload the built APK
     - name: Upload APK
       uses: actions/upload-artifact@v2
       with:
-        name: app-release.apk
+        name: app-debug.apk
         path: app/build/outputs/apk/debug/app-debug.apk
