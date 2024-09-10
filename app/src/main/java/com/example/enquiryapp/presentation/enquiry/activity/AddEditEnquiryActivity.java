@@ -299,19 +299,34 @@ public class AddEditEnquiryActivity extends BaseActivity<ActivityAddEditEnquiryB
     return super.onOptionsItemSelected(item);
   }
 
-  @Override
-  public void onSuccess() {
-
+ @Override
+public void onSuccess() {
     binding.latitudeEt.et.setText(latitude);
     binding.longitudeEt.et.setText(longitude);
 
+    // Get location name using Geocoder
+    Geocoder geocoder = new Geocoder(AddEditEnquiryActivity.this, Locale.getDefault());
+    try {
+        List<Address> addresses = geocoder.getFromLocation(Double.parseDouble(latitude), Double.parseDouble(longitude), 1);
+        if (addresses != null && !addresses.isEmpty()) {
+            String locationName = addresses.get(0).getAddressLine(0); // You can also use getLocality(), getCountryName(), etc.
+            binding.latitudeEt.et.setText(locationName); // Display the location name instead of latitude
+            binding.longitudeEt.et.setVisibility(View.GONE); // Hide longitude since we're using location name
+        } else {
+            Util.showToast(AddEditEnquiryActivity.this, "Unable to get location name");
+        }
+    } catch (IOException e) {
+        Util.showToast(AddEditEnquiryActivity.this, "Error getting location name");
+        Timber.e(e, "Geocoder failed");
+    }
+
     AddEditEnquiryState state = addEditEnquiryViewModel.state.getValue();
     if (state == null) {
-      state = new AddEditEnquiryState();
+        state = new AddEditEnquiryState();
     }
 
     if (enquiryReport != null) {
-      state.setId(enquiryReport.getId());
+        state.setId(enquiryReport.getId());
     }
     state.setName(getEditTextInput(binding.nameEt.et));
     state.setMobileNumber(getEditTextInput(binding.mobileNumberEt.et));
@@ -323,11 +338,11 @@ public class AddEditEnquiryActivity extends BaseActivity<ActivityAddEditEnquiryB
     state.setEmpName(getEditTextInput(binding.empNameEt.et));
 
     if (enquiryReport == null) {
-      addEditEnquiryViewModel.onEvent(EnquiryReportAction.ADD);
+        addEditEnquiryViewModel.onEvent(EnquiryReportAction.ADD);
     } else {
-      addEditEnquiryViewModel.onEvent(EnquiryReportAction.UPDATE);
+        addEditEnquiryViewModel.onEvent(EnquiryReportAction.UPDATE);
     }
-  }
+}
 
   @Override
   public void onError() {
